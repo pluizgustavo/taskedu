@@ -1,0 +1,189 @@
+/* Contraste dos modais internos usados pelos selects do Ionic. */
+ion-alert.admin-class-select .alert-checkbox-label,
+ion-alert.admin-class-select .alert-radio-label,
+ion-alert.admin-class-select [aria-checked='true'] .alert-checkbox-label,
+ion-alert.admin-class-select [aria-checked='true'] .alert-radio-label {
+  color: #fff !important;
+  font-weight: 650 !important;
+}
+
+ion-alert {
+  --background: #11172b;
+  --backdrop-opacity: 0.75;
+  --color: #f4f7ff;
+  --max-width: 360px;
+  --width: 92%;
+}
+
+ion-alert .alert-wrapper {
+  border: 1px solid rgba(255, 255, 255, 0.14) !important;
+  border-radius: 20px !important;
+  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.7) !important;
+}
+
+ion-alert .alert-head {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.09);
+}
+
+ion-alert .alert-title {
+  color: #f7f8ff !important;
+  font-weight: 850 !important;
+}
+
+ion-alert .alert-radio-label {
+  color: #dce3f3 !important;
+  font-weight: 650 !important;
+}
+
+ion-alert .alert-radio-icon {
+  border-color: #8591a9 !important;
+}
+
+ion-alert [aria-checked='true'] .alert-radio-label {
+  color: #b3abff !important;
+}
+
+ion-alert [aria-checked='true'] .alert-radio-icon {
+  border-color: #9c91ff !important;
+}
+
+ion-alert [aria-checked='true'] .alert-radio-inner {
+  background: #9c91ff !important;
+}
+
+ion-alert .alert-radio-button:hover {
+  background: rgba(109, 93, 252, 0.12) !important;
+}
+
+ion-alert .alert-radio-group {
+  border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+ion-alert .alert-button {
+  color: #aaa1ff !important;
+  font-weight: 850 !important;
+}
+
+/* Botão de horário do calendário: evita texto branco sobre fundo branco. */
+ion-datetime::part(time-button) {
+  color: #f8f7ff;
+  background: linear-gradient(135deg, #6556e8, #7c6dfc);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(86, 70, 218, 0.3);
+}
+
+ion-datetime::part(time-button):hover {
+  background: linear-gradient(135deg, #7567f3, #8c7fff);
+}
+
+ion-datetime::part(month-year-button) {
+  color: #dce3f3;
+}
+
+.date-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.date-title span {
+  color: #dce3f3;
+  font-size: 0.82rem;
+  font-weight: 750;
+}
+
+.date-title small {
+  color: #75839d;
+  font-size: 0.7rem;
+}
+
+.time-field {
+  display: flex !important;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 14px;
+  padding: 12px 14px;
+  border: 1px solid rgba(139, 124, 255, 0.24);
+  border-radius: 13px;
+  background: linear-gradient(135deg, rgba(109, 93, 252, 0.1), rgba(22, 217, 227, 0.04));
+}
+
+.time-field span {
+  color: #b9c3d8;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.time-field input {
+  width: 116px;
+  padding: 10px 12px;
+  border: 1px solid rgba(169, 160, 255, 0.38);
+  border-radius: 10px;
+  outline: none;
+  color: #f8f7ff;
+  background: #292153;
+  font: inherit;
+  font-weight: 800;
+  color-scheme: dark;
+  box-shadow: 0 8px 22px rgba(54, 42, 145, 0.24);
+}
+
+.time-field input:focus {
+  border-color: #a99fff;
+  box-shadow: 0 0 0 3px rgba(139, 124, 255, 0.16);
+}
+
+.signup-area {
+  margin-top: 24px;
+}
+
+.signup-divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #66738d;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.signup-divider::before,
+.signup-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.14));
+}
+
+.signup-divider::after {
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.14), transparent);
+}
+
+.signup-area > p {
+  margin: 12px 0 6px;
+  color: #8794ad;
+  font-size: 0.82rem;
+}
+
+.signup-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+}
+
+.signup-actions ion-button {
+  --color: #aaa1ff;
+  margin: 0;
+  font-size: 0.78rem;
+}
+
+@media (max-width: 440px) {
+  .signup-actions {
+    grid-template-columns: 1fr;
+  }
+}

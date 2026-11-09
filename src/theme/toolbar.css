@@ -1,0 +1,27 @@
+.toolbar-brand-right {
+  float: right;
+  text-align: right;
+  padding-inline-end: 20px;
+}
+
+.toolbar-page-title {
+  float: left;
+}
+
+.toolbar-back-button {
+  min-height: 38px;
+  margin-inline-start: 10px;
+  --padding-start: 13px;
+  --padding-end: 15px;
+  --border-radius: 999px;
+  --background: #eaf3ff;
+  --background-hover: #dbeaff;
+  --color: #1769e0;
+  --box-shadow: none;
+  font-size: 0.86rem;
+  font-weight: 800;
+}
+
+.toolbar-back-button ion-icon {
+  font-size: 18px;
+}

@@ -1,0 +1,7 @@
+{
+  "name": "TaskEdu",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "vue-vite"
+}

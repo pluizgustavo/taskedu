@@ -1,0 +1,5 @@
+project_id = "taskedu"
+
+[functions.admin-usuarios]
+# JWT é validado explicitamente com Auth.getUser no handler (suporta chaves assimétricas).
+verify_jwt = false
