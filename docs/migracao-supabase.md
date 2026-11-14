@@ -48,6 +48,18 @@ Mantenha os links padrão dos modelos de e-mail (`{{ .ConfirmationURL }}`); o cl
 
 Em **Authentication > Sign In / Providers > Email**, mantenha a confirmação de e-mail habilitada, configure a política de senha com pelo menos oito caracteres, letras e números e **desabilite novos cadastros públicos** (Allow new users to sign up). O Admin SDK da Edge Function cria as contas, sem cadastro público.
 
+### Conferir o modelo de recuperação de senha
+
+Em **Authentication > Email Templates > Reset Password**, confirme que o conteúdo do e-mail tem um link clicável para `{{ .ConfirmationURL }}`, por exemplo:
+
+```html
+<p>Para escolher uma nova senha, <a href="{{ .ConfirmationURL }}">clique aqui</a>.</p>
+```
+
+Esse é o e-mail que deve conter o link. Não use nesse modelo o texto do modelo **Password Changed** (“Sua senha foi alterada”): ele é apenas uma notificação enviada depois que a senha já foi alterada. Após solicitar a recuperação no app, o link deve retornar para `/auth/retorno?recuperacao=1` e abrir a tela **Alterar senha**. Depois de salvar, entre novamente com a nova senha.
+
+Se só chegar “Sua senha foi alterada” ou não chegar o e-mail **Reset Password**, confira se editou o modelo correto e veja **Authentication > Logs** e os logs do provedor SMTP. Uma resposta de sucesso no app não confirma que a caixa recebeu uma mensagem; o Supabase também pode responder com sucesso para não revelar se um endereço está cadastrado. Se aparecer “Aguarde antes de solicitar outro e-mail”, espere o limite de envio antes de tentar novamente.
+
 ## 4. Configurar envio de e-mail (SMTP)
 
 O envio padrão do Supabase só entrega mensagens aos membros da organização do projeto. Para confirmar e-mails e recuperar senhas de alunos/professores, configure um provedor SMTP em **Authentication > Email > SMTP Settings** (a posição pode variar no painel).

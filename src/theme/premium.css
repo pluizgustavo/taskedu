@@ -133,6 +133,7 @@ html.tema-escuro .welcome-access .teacher-button { --background:#18243a; --color
 html.tema-escuro ion-card { --background:#121b2d; color:var(--muted); }
 html.tema-escuro .description,html.tema-escuro .teacher,html.tema-escuro .delivery span { color:#b4c4db!important; }
 html.tema-escuro .filters-panel ion-searchbar { --background:#18243a; --color:var(--ink); }
+html.tema-escuro .admin-page ion-searchbar { --background:#101a2c; --color:var(--ink); --placeholder-color:#c3cede; --icon-color:#c3cede; --clear-button-color:#c3cede; --box-shadow:none; }
 html.tema-escuro .empty-state { background:#121b2d; border-color:var(--line); }
 html.tema-escuro .bottom-nav a.router-link-active,html.tema-escuro .priority { background:#213454; }
 html.tema-escuro ion-alert { --background:#121b2d; --color:#f2f6ff; }

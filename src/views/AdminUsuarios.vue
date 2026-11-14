@@ -16,7 +16,6 @@
             <template v-if="!editando">
               <ion-input v-model="form.senha" :type="mostrarSenha?'text':'password'" label="Senha temporária" label-placement="stacked" fill="outline" autocomplete="new-password" :minlength="8" :maxlength="128" required/>
               <ion-button type="button" fill="clear" size="small" @click="mostrarSenha=!mostrarSenha">{{ mostrarSenha ? 'Ocultar senha' : 'Mostrar senha' }}</ion-button>
-              <ion-button type="button" fill="outline" size="small" @click="gerarSenha">Gerar senha temporária</ion-button>
               <p class="admin-help">Entregue o e-mail e a senha temporária ao usuário. No primeiro acesso, ele confirmará o e-mail e escolherá uma nova senha.</p>
             </template>
             <p v-if="erroForm" class="error" role="alert">{{ erroForm }}</p>
@@ -63,7 +62,6 @@ async function carregar(){carregando.value=true;erroLista.value='';try{contas.va
 onIonViewWillEnter(carregar);
 function limpar(){Object.assign(form,vazio());editando.value='';erroForm.value='';mostrarSenha.value=false;}
 function editar(conta:Usuario){limpar();sucesso.value='';editando.value=conta.uid;Object.assign(form,{nome:conta.nome,email:conta.email,tipo:conta.tipo,turma:conta.turma||'',turmas:[...(conta.turmas||[])]});}
-function gerarSenha(){const bytes=crypto.getRandomValues(new Uint8Array(12));form.senha='Te9!'+Array.from(bytes,b=>b.toString(16).padStart(2,'0')).join('');mostrarSenha.value=true;}
 async function salvar(){
   if(excluindo.value) return;
   erroForm.value='';sucesso.value='';
